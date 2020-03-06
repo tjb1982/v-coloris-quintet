@@ -1,0 +1,9 @@
+*.sw*
+*.pdf
+*.mid*
+audio/
+.venv
+build/
+Church\ Buiksloterkerk/
+study-scores/
+
