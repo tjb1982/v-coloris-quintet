@@ -13,7 +13,7 @@ maestoso-bassoon-score = \killCues \maestoso-bassoon
 
 maestoso-music = \new StaffGroup {
     <<
-        \new Staff \with {
+        \new Staff = "flute-context" \with {
             instrumentName = \flute-name
             shortInstrumentName = \flute-short-name
         } \removeWithTag #'part { \maestoso-flute-score }
@@ -38,38 +38,43 @@ maestoso-music = \new StaffGroup {
 
 maestoso-music-concert-pitch = \new StaffGroup {
     <<
-        \new Staff \with {
+        \new Staff = "flute-context" \with {
             instrumentName = \flute-name
             shortInstrumentName = \flute-short-name
             midiInstrument = "flute"
             %midiInstrument = "oboe"
-            %midiInstrument = "acoustic grand"
+            midiInstrument = "electric piano 1"
+            %midiInstrument = "synthbrass 2"
         } \removeWithTag #'part { \maestoso-flute-score }
         \new Staff \with {
             instrumentName = \oboe-name
             shortInstrumentName = \oboe-short-name
             midiInstrument = "oboe"
-            %midiInstrument = "acoustic grand"
+            midiInstrument = "electric piano 1"
+            %midiInstrument = "synthbrass 2"
         } \removeWithTag #'part { \maestoso-oboe-score }
         \new Staff \with {
             instrumentName = \clarinet-name
             shortInstrumentName = \clarinet-short-name
             midiInstrument = "clarinet"
             %midiInstrument = "english horn"
-            %midiInstrument = "acoustic grand"
+            midiInstrument = "electric piano 1"
+            %midiInstrument = "synthbrass 2"
         } \removeWithTag #'part { \maestoso-clarinet-score }
         \new Staff \with {
             instrumentName = \horn-name
             shortInstrumentName = \horn-short-name
             %midiInstrument = "french horn"
             midiInstrument = "english horn"
-            %midiInstrument = "acoustic grand"
+            midiInstrument = "electric piano 1"
+            %midiInstrument = "synthbrass 2"
         } \removeWithTag #'part { \maestoso-horn-score }
         \new Staff \with {
             instrumentName = \bassoon-name
             shortInstrumentName = \bassoon-short-name
             midiInstrument = "bassoon"
-            %midiInstrument = "acoustic grand"
+            midiInstrument = "electric piano 1"
+            %midiInstrument = "synthbrass 2"
         } \removeWithTag #'part { \maestoso-bassoon-score }
     >>
 }
@@ -81,7 +86,7 @@ maestoso-score = \score {
         indent = \main-indent
         short-indent = \short-indent
         \context {
-            \Staff \RemoveEmptyStaves
+            %\Staff \RemoveEmptyStaves
         }
     }
     \header {
@@ -98,7 +103,7 @@ maestoso-score-concert-pitch = \score {
         indent = \main-indent
         short-indent = \short-indent
         \context {
-            \Staff \RemoveEmptyStaves
+            %\Staff \RemoveEmptyStaves
         }
     }
     \header {

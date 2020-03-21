@@ -14,7 +14,7 @@ scherzo-bassoon = \new Voice \relative c {
     |
         bes4.-- \fp \< c4.--
     |
-        f,4.-- \rfz g'4.-- \mp ~
+        f,4.-- \rfz g'4. \mp ~
     |
         g4. \< f4. \mf \espressivo
     |

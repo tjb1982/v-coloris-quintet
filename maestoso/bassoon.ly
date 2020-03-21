@@ -2,6 +2,7 @@
 \include "maestoso/tempos.ly"
 
 maestoso-bassoon = \new Voice \relative c {
+    \numericTimeSignature
     \tag #'part {
         \override Hairpin.to-barline = ##f 
     }
@@ -12,17 +13,19 @@ maestoso-bassoon = \new Voice \relative c {
         {
                 R1 ^\markup {\whiteout "colla parte"}
             |
-                r4 d,2. \f \> ~
+                r4 d,2. \f ~
             |
-                d2 a' \p \fermata
+                d2 a \fermata
             |
                 R1
             |
-                r4 cis,4~ \f 2 \>
+                r4 cis4~ ( \mp 2 \>
             |
-                cis'2. bis4 \p \fermata
+                \time 5/4
+                cis'2. bis2 ) \p \fermata
             |
-                r4 gis4---> \f \tuplet 3/2 { cis-- e-- \> a ~ }
+                \time 4/4
+                r4 gis4---> \f \tuplet 3/2 { cis-- e-- \> a-- }
             |
                 a1 \p ~
             |
@@ -31,32 +34,36 @@ maestoso-bassoon = \new Voice \relative c {
                 e2. \rfz r4
             |
                 \time 6/4
-                f4 \p \> ~ 2 \fermata ~
+                f4 \p \> ~ 2 \fermata
                 %\piu-animato-stringendo
-                4 \! r2
+                r4 \! r4 \clef "tenor" g-- \f
             |
                 \time 4/4
-                R1
+                c4. g'8 aes4 bes4
             |
-                r2
-                %\piu-ritenuto-e-allarg
-                \tuplet 3/2 { r4 c-- \p \< cis-- }
+                %r2
+                %%\piu-ritenuto-e-allarg
+                %\tuplet 3/2 { c'4-- \pp \< c-- cis-- }
+                \tuplet 3/2 { c2-- ( c4-- ) }
+                \clef "bass" c,,,!4---> g''4--->
             |
-                f4-- \rfz \> ( e2 ) r4 \!
+                f!4-- \rfz ( e2 \< ) d!4-- ~ \>
             |
-                f4 \p ( e4 ~ e4. ) r8
+                d f4 e4. \p ees,8
             |
-                aes,1 \< ~
+                aes1 \< ~
             |
                 aes2 bes-- \! \>
             |
-                c4 c,4~ c4 \fermata \breathe g'4 (
-                \bar "||"
+                c4 c,4~ c4 \fermata \breathe g'4--
         }
 
-        \tag #'part \cue-staff \horn-short-name \quoteDuring "maestoso-horn" {
+        \tag #'part \cue-staff \horn-common-name \horn-short-name \quoteDuring "maestoso-horn" {
+            \numericTimeSignature
             \clef "bass"
-            s1*7
+            s1*5
+            s2. s2
+            s1
             \clef "tenor"
             s1*3
             s2. \clef "bass" s2.
@@ -68,23 +75,98 @@ maestoso-bassoon = \new Voice \relative c {
     >>
     % Second theme
     |
+        \bar "||"
         \allegretto
         \key c \major
-        c1~ \pp
+        c1~ \pp \<
     |
-        c2. ) r4
+        c2. \> r4 \!
     |
+        \bar ".|:"
         %r2 \clef "tenor" c''4. \f ( g8 )
         r2 \clef "tenor" c''4. \p ( f,8 )
     |
         %c,4. r8
         \time 2/4
-        g4. \< ( c,8-. ) g2 \mf
+        \acciaccatura a8 g4. \< ( c,8-. )
+    |
+        \clef "bass"
+        g4.-- \mf g,8-. \p
+    |
+        g'4.-- \mf c,,8-. \p
+    |
+        c'4-- \f a--->
+    |
+        e4.---> \rfz b8-.
+    |
+        e4.-- b8 \mf (
+    |
+        e4 \> gis8-- b--
+    |
+        \time 4/4
+        %c4. ) \p r8 r2
+        c4. ) \p r8 r8 \clef "tenor" g' \mp \< ( c-. ) e-.
+    |
+        \tuplet 3/2 { f8-- \f \> c'-- f,-- }
+        \tuplet 3/2 { e8-- f-- e-- }
+        d4~ ( \tuplet 3/2 { d8 \p \clef "bass" c,-. g'-. ) }
+    |
+        r8 \clef "tenor" d''4 ( d,8-. ) r8 \clef "bass" d,4.~ \< (
+    |
+        d8-- \mp \> g8-. \! ) r4
+        r4 d,4~ \pp
+    |
+        \time 2/4
+        d4. \cresc a''16 ( g32 fis
+    |
+        g4 ) c,4 (
+    |
+        ees,8-- \mf \> g4 ) bes8-- \p
+    |
+        aes4.-- \< ees8--
+    |
+        des4-- bes4-- \ff
+    |
+        \time 4/4
+        \key ees \major
+        r2 r4 g''~ \p \<
+    |
+        \time 2/4
+        g4. \rfz \> r8 \!
+    |
+        ees4. \espressivo r8
+    |
+        des4-- \< bes4-- \mf
+    |
+        \time 4/4
+        r2 r4 \clef "tenor" f''4~ \p \<
+    |
+        \time 2/4
+        f4. \rfz \> r8 \!
+    |
+        fes8 \espressivo ( ees4 ) r8 %r16 ees,,-- d!-- ees--
+    |
+        d8 \rfz ( a'4 ) r8
+    |
+        \clef "bass" bes,,8 ( f'4 ) r8
+    |
+        f,4 \p \espressivo
+        4 \mp \espressivo
+        4 \mf \espressivo
+        4 \f \espressivo
+    |
+        \bar "||"
+        \time 4/4
+        \key c \major
+        c1~ \ff \>
+    |
+        c2. r4 \!
+        \bar ":|."
 }
 
 
 maestoso-bassoon-part = \score {
-    \new Staff \with { instrumentName = \bassoon-name } \maestoso-bassoon
+    \removeWithTag #'score \new Staff \with { instrumentName = \bassoon-name } \maestoso-bassoon
     \header {
         title = \maestoso-movement-number
         subtitle = ""
