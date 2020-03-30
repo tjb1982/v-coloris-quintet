@@ -82,34 +82,35 @@ maestoso-flute = \new Voice \relative c'' {
                     gis2. \> gis,2~ \ppp \fermata
                 |
                     \time 4/4
-                    gis1~
+                    gis1~ \<
                 %|
                 %    gis2 g!4.~ g8 \glissando _\markup { \teeny "(chromatic)" }
                 %|
                 %    bes,4 f'4. ) r8 f4~ (
                 |
-                    gis2 g!2~
+                    gis2 \pp g!2~
                 |
-                    g4 f4. ) r8 f4~ (
+                    g4 f4. ) r8 f4~ \< (
                 |
-                    f4. r8 e,4 f4--
+                    %f4. \> r8 \! e,4 \< f4--
+                    f1~
                 |
                     \time 6/4
-                    f4~ f2 ) \fermata \breathe
-                    e4
+                    f4 \> f,2 \! ) \fermata \breathe
+                    e4 \mp \<
                     %e8 f16 \tuplet 3/2 { g32 a b }
                     %e8 \tuplet 6/4 { f32 g a b c d }
                     c'4. g'8
                 |
                     \time 4/4
-                    d4 ( e4.~ e8 ) g,4 \espressivo
+                    d4 \mf ( e4.~ e8 ) fis,4 \espressivo
                 |
                     %\tuplet 3/2 { r4 ees'-- des-- }
-                    \tuplet 3/2 { r4 ees'4-- des,4-- }
-                    ges'4 \tuplet 3/2 { r8 e! ( f }
+                    \tuplet 3/2 { r4 dis'4-- \f cis4-- }
+                    fis4 \tuplet 3/2 { r8 e! ( f }
                     %fis4 \tuplet 3/2 { r8 e32 ( fis g a b cis dis e64 fis }
                 |
-                    g'!4 g,,!2 ) r4
+                    g'!4 \> g,,!2 ) r4 \!
                 |
                     r2 r4 %g4~
 
@@ -164,15 +165,101 @@ maestoso-flute = \new Voice \relative c'' {
             \quoteDuring "maestoso-horn" \maestoso-flute-horn-solo-cue
     >>
     |
+
+    %% Allegretto
         \bar "||"
         \allegretto
         \key c \major
         c'1~ \pp 
     |
-        c1~ \<
+        <<
+        { c1~ }
+        { s2. \< s8 s8 \! }
+        >>
     |
-        \bar ".|:"
-        c2 \> r2 \!
+        c2~ \p \> c8 \! r8 r4
+    |
+        \time 2/4
+        \tag #'score {
+            \hideNotes \grace s8 \unHideNotes
+        }
+        R2
+    |
+        R2*4
+    |
+        r8 e,,4.~ \p ( \<
+    |
+        e4 \> d4 ) \!
+    |
+        \time 4/4
+        r8 f \mf \< ( g-. ) c-. e-- g, ( c-. ) e-.
+    |
+        \tuplet 3/2 { f8-- \f \> c'-- f,-- }
+        \tuplet 3/2 { e8-- f-- e-- }
+         d8-- ( g,-. ) b-. d-. \!
+    |
+        r8 g, \< ( c-- ) d-- g-- g, ( c-- ) fis--
+    |
+        \time 2/4
+        g8-- \f ( g,8 ) r4
+    |
+        R2*5
+    %|
+    %    g2~ \pp
+    %|
+    %    g4 ) d4 \<
+    %|
+    %    \acciaccatura e!8 d8 ( g,4 ) f8--
+    %|
+    %    c2 ~ \p \<
+    %|
+    %    c8 c,8---> f8---> \ff bes--->
+    |
+        \time 4/4
+        \key ees \major
+        R1
+    |
+        \time 2/4
+        R2*3
+    |
+        \time 4/4
+        R1
+    |
+        \time 2/4
+        R2
+    |
+        R2
+    |
+        \key c \major
+        r8 a~ 16 b-.-- \< c ( d )
+    |
+        e8 \espressivo \mp ( g,~  g16 ) g ( f e' )
+    |
+        \tempo "allargando"
+        e8 \espressivo \p ( a, )
+        e' \espressivo \mp ( a, )
+        e' \espressivo \mf ( a, )
+        e' \espressivo \f ( a, )
+    |
+        \bar "||"
+        \time 4/4
+        \tempo "a tempo"
+        <<
+            {
+                r2 c'2~
+            |
+                c1~
+            }
+            \new Voice {
+                s2 s2 \pp \<
+            |
+                s4*3 \f \> s4 \!
+            }
+        >>
+        \oneVoice
+
+    %% Allegretto 2
+        c2 \p \> r2 \!
     |
         \time 2/4
         \tag #'score {
@@ -243,24 +330,26 @@ maestoso-flute = \new Voice \relative c'' {
         \time 2/4
         R2
     |
-        R2
+        %r4 r8 \tuplet 5/4 { f,32 ( bes c f g }
+        r4 r8 f,16 \p ( \tuplet 3/2 { bes32 c f }
     |
-        a8 \mf ( a,~ \f \> 16 ) b-.-- c ( d )
+        \key c \major
+        a8 \rfz a,~ 16 ) b-.-- \< c ( d )
     |
-        e8 \mp ( g,~  g16 ) g ( f e' )
+        e8 \espressivo \mp ( g,~  g16 ) g ( f e' )
     |
+        \tempo "allargando"
         e8 \espressivo \p ( a, )
         e' \espressivo \mp ( a, )
+    |
         e' \espressivo \mf ( a, )
         e' \espressivo \f ( a, )
     |
-        \bar "||"
-        \time 4/4
-        \key c \major
-        r2 c'2~ \pp \<
+        r8 d, a' e'
     |
-        c1~ \p
-        \bar ":|."
+        r8 c, g' c
+    |
+        e8 e,4
 }
 
 

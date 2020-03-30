@@ -43,7 +43,7 @@ maestoso-oboe = \new Voice \relative c' {
                 %r2
                 %\tuplet 3/2 { r4 c-- \pp \< cis-- ( }
                 %R1
-                \tuplet 3/2 { r4 c4-- e'4-- } c,4-- ais~
+                \tuplet 3/2 { r4 c4-- \f e4-- } c4-- ais~
             |
                 ais4~ \rfz \> ais2 r4 \!
             |
@@ -60,14 +60,74 @@ maestoso-oboe = \new Voice \relative c' {
         >>
 
     |
+
+    %% Allegretto
         \bar "||"
         \allegretto
         \key c \major
-        c2~ c2~ \! \>
+        c1~
     |
-        c8 \! r8 r4 r8 c4.~ \espressivo
+        c2. \> r4 \! %r8 r4 r8 c4.~ \espressivo
     |
-        \bar ".|:"
+        R1
+    |
+        \time 2/4
+        \grace s8
+        R2*7
+    |
+        \time 4/4
+        R1*3
+    |
+        \time 2/4
+        r4
+        r16 g'-.-- \mp fis ( g )
+    |
+        a8 \cresc ( d, ) r16 a'-.-- g ( a )
+    |
+        bes8 ( d, ) r16 bes'-.-- a ( bes )
+    |
+        bes8-- ( ees,~ ees16 ) ees-.-- d ( ees )
+    |
+        d8 \espressivo \mf \< ( c~ c16 ) c ( d ees
+    |
+        f8 ) c-- f-- ( \f \> bes^~
+    |
+        \time 4/4
+        \key ees \major
+        bes2. ) \p r4
+    |
+        \time 2/4
+        r4 r16 ees,-.-- \mp d ( ees )
+    |
+        d8 \espressivo ( c~ c16 ) c ( d ees f8 ) c-- f-- bes--^~
+    |
+        \time 4/4
+        bes2 \p \acciaccatura c'8 bes8 ( bes,4 ) r8
+    |
+        \time 2/4
+        r4 r16 bes-.-- \mf c ( d )
+    |
+        d8 \p \espressivo ( ees~ ees16 ) ees-.-- d ( ees )
+    |
+        \key c \major
+        e!4. \rfz r8
+    |
+        R2
+    |
+        \tempo "allargando"
+        f,4 \p \espressivo
+        4 \mp \espressivo
+        4 \mf \espressivo
+        4 \f \espressivo
+    |
+        \bar "||"
+        \time 4/4
+        \tempo "a tempo"
+        r2 c2~ \p \<
+    |
+        c2~ \f \> 8 c4.~ \p
+
+    %% Allegretto 2
         c8 r8 c''2.~ \pp \<
     |
         \time 2/4
@@ -114,46 +174,38 @@ maestoso-oboe = \new Voice \relative c' {
     |
         bes8 ( ees,~ ees16 ) ees-.-- d ( ees )
     |
-        d8-- \f \< ( c~ c16 ) c ( d ees
+        d8 \espressivo \f \< ( c~ c16 ) c ( d ees
     |
         f8 ) c-- f-- \ff \> bes^~
     |
         \time 4/4
         \key ees \major
-        bes2~ \p \> bes2~
+        %bes2~ \p \> bes2~
+        bes2 \p \acciaccatura c'8 bes8 bes,4.~ \>
     |
         \time 2/4
         bes8 \pp r8 r16 ees,-.-- \mp d ( ees )
     |
-        d8 \espressivo ( c~ c16 ) c ( d ees f8 ) c-- f-- bes-- ^~ \>
+        d8 \espressivo ( c~ c16 ) c ( d ees f8 ) c-- \tuplet 3/2 { ees-- f-- bes-- ^~ \> }
     |
         \time 4/4
-        bes2 \p \acciaccatura c'8 bes8 ( \< bes,4.~
+        bes2 \p \acciaccatura c'8 bes8 ( bes,4.~ \<
     |
         \time 2/4
         bes8 \rfz \> g~ g16 ) bes-.-- \mf c ( d )
     |
-        d8 \espressivo ( ees~ ees16 ) ees-.-- d ( ees )
+        d8 \p \espressivo ( ees~ ees16 ) ees-.-- d ( ees )
     |
-        e4. \espressivo r8
+        \key c \major
+        e!4. \rfz r8
     |
         R2
     |
+        \tempo "allargando"
         f,4 \p \espressivo
         4 \mp \espressivo
         4 \mf \espressivo
         4 \f \espressivo
-    |
-        \bar "||"
-        \time 4/4
-        \key c \major
-        c1~ \ff \>
-    |
-        c2. c4~ \p
-        \bar ":|."
-
-
-
 }
 
 

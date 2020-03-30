@@ -34,7 +34,7 @@ maestoso-clarinet = \new Voice \relative c' {
                 bes2 \< c2~
             |
                 \time 6/4
-                c4 \mp \> ~ 2 \fermata r4 ) \! r2
+                c4 \mp \> ~ 2 ) \fermata r4 \! r2
             |
                 \time 4/4
                 R1
@@ -68,6 +68,8 @@ maestoso-clarinet = \new Voice \relative c' {
             }
     >>
     |
+
+    %% Allegretto
         \bar "||"
         \allegretto
         \key c \major
@@ -75,7 +77,77 @@ maestoso-clarinet = \new Voice \relative c' {
     |
         f8-- \f \> ( g16 ) f e8 ( f16 ) e d8-- ( g,-. ) b-. d-. \!
     |
-        \bar ".|:"
+        r8 e, \< ( g-. ) b-. e-- ( f,-. ) a-. d-.
+    |
+        \time 2/4
+        \acciaccatura d c-- \! \> ( g-. ) r16 \! c-. \cresc b ( c )
+    |
+        d8 ( g,-. ) r16 d'-. c ( d )
+    |
+        e8 ( g,-. ) r16 e'-. d ( e )
+    |
+        fis8-- \f a,---> \sf \tuplet 3/2 { c8-- e-- fis-- }
+    |
+        gis8 ( b,8~ \rfz b16 ) c ( b c
+    |
+        b4. \> ) r8 \!
+    |
+        R2
+    |
+        \time 4/4
+        r4 f, \mp ^\markup { \italic dolce } c'4. g8
+    |
+        \acciaccatura a'8 g4 ( g'2~ g8 ) r8
+    |
+        \acciaccatura a8 g8 ( g,4.~ \>
+        g4 ) a4-- ( \p \<
+    |
+        \time 2/4
+        g4-- \mp \> ) r4 \!
+    |
+        R2*4
+    |
+        f,2~ \pp \<
+    |
+        \time 4/4
+        \key ees \major
+        \bar "||"
+        f8 f \p \< ( g bes ees f g bes )
+    |
+        \time 2/4
+        bes8 \rfz \> ( d,4 ) r8 \!
+    |
+        bes8 \espressivo ( aes4 ) r8
+    |
+        r4 f4~ ( \<
+    |
+        \time 4/4
+        f4 \> g8 \p \< bes ees f g bes
+    |
+        \time 2/4
+        d8 \rfz \> c4 ) r8 \!
+    |
+        c4~ \p \espressivo c16 g-.-- f ( ees )
+    |
+        \key c \major
+        d8 \rfz ( cis4 ) r8
+    |
+        R2
+    |
+        \tempo "allargando"
+        g4 \p \espressivo
+        4 \mp \espressivo
+        4 \mf \espressivo 
+        4 \f \espressivo
+    |
+        \tempo "a tempo"
+        \bar "||"
+        \time 4/4
+        r8 e' \ff \> ( g-. ) c-. e-- a, ( c-. ) e-.
+    |
+        f8-- ( g16 ) f e8 ( f16 ) e d8-- ( g,-. ) b-. d-. \mf
+
+    %% Allegretto 2
         r8 e, \< ( g-. ) b-. e-- ( f,-. ) a-. d-.
     |
         \time 2/4
@@ -110,7 +182,7 @@ maestoso-clarinet = \new Voice \relative c' {
     |
         ees4 \! ) bes'4~ (
     |
-        bes8 aes8~ aes4 ) \p \<
+        bes8 \espressivo aes8~ aes4 ) \p \<
     |
         f4-- bes4-- \ff
     |
@@ -132,24 +204,18 @@ maestoso-clarinet = \new Voice \relative c' {
         \time 2/4
         d8 \rfz \> c4 ) r8 \!
     |
-        c4~ \espressivo c16 g-.-- f ( ees )
+        c4~ \p \espressivo c16 g-.-- f ( ees )
     |
+        \key c \major
         d8 \rfz ( cis4 ) r8
     |
         R2
     |
+        \tempo "allargando"
         g4 \p \espressivo
-         4 \mp \espressivo
-         4 \mf \espressivo 
-         4 \f \espressivo
-    |
-        \bar "||"
-        \time 4/4
-        \key c \major
-        r8 e' \ff \> ( g-. ) c-. e-- a, ( c-. ) e-.
-    |
-        f8-- ( g16 ) f e8 ( f16 ) e d8-- ( g,-. ) b-. d-. \mf
-        \bar ":|."
+        4 \mp \espressivo
+        4 \mf \espressivo 
+        4 \f \espressivo
 }
 
 

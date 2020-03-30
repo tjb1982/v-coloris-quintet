@@ -19,7 +19,7 @@ maestoso-bassoon = \new Voice \relative c {
             |
                 R1
             |
-                r4 cis4~ ( \mp 2 \>
+                r4 cis2. ( \mp \>
             |
                 \time 5/4
                 cis'2. bis2 ) \p \fermata
@@ -36,7 +36,7 @@ maestoso-bassoon = \new Voice \relative c {
                 \time 6/4
                 f4 \p \> ~ 2 \fermata
                 %\piu-animato-stringendo
-                r4 \! r4 \clef "tenor" g-- \f
+                r4 \! r4 \clef "tenor" g-- \mf \<
             |
                 \time 4/4
                 c4. g'8 aes4 bes4
@@ -44,7 +44,7 @@ maestoso-bassoon = \new Voice \relative c {
                 %r2
                 %%\piu-ritenuto-e-allarg
                 %\tuplet 3/2 { c'4-- \pp \< c-- cis-- }
-                \tuplet 3/2 { c2-- ( c4-- ) }
+                \tuplet 3/2 { c2-- \f ( c4-- ) }
                 \clef "bass" c,,,!4---> g''4--->
             |
                 f!4-- \rfz ( e2 \< ) d!4-- ~ \>
@@ -73,8 +73,9 @@ maestoso-bassoon = \new Voice \relative c {
             s1*3
         }
     >>
-    % Second theme
     |
+
+    %% Allegretto
         \bar "||"
         \allegretto
         \key c \major
@@ -82,9 +83,86 @@ maestoso-bassoon = \new Voice \relative c {
     |
         c2. \> r4 \!
     |
-        \bar ".|:"
+        R1
+    |
+        \time 2/4
+        \grace s8
+        R2
+    |
+        r4 g'8.-- \mf \cresc g16-.
+    |
+        g4-- g4--
+    |
+        d'4-- \f a4--
+    |
+        r8 e,4.---> \rfz ~
+    |
+        e8 e4-- b'8 \mf (
+    |
+        e4 \> gis8-- b--
+    |
+        \time 4/4
+        c4. ) \p r8 r2
+        % XXX
+    |
+        R1
+    |
+        R1
+    |
+        \time 2/4
+        R2
+    |
+        % \XXX
+        r8 d4 \pp \cresc a16 ( g32 fis
+    |
+        g4 ) c,4
+    |
+        ees8-- ( \mf \> g4 ) bes8 ( \p
+    |
+        aes4. \espressivo ees8
+    |
+        des4 ) bes4~
+    |
+        \time 4/4
+        \key ees \major
+        bes2. g'4~ \p \<
+    |
+        \time 2/4
+        g2 \rfz
+    |
+        ees2 \espressivo
+    |
+        des4 ( \< ees,4~ \mf
+    |
+        \time 4/4
+        ees2~ ees8 ) r8 \clef "tenor" f''4~ \p \<
+    |
+        \time 2/4
+        f4. \rfz \> r8 \!
+    |
+        fes8 \p \espressivo ( ees4 ) f!8 ( %r16 ees,,-- d!-- ees--
+    |
+        \key c \major
+        d8 \rfz a'4 ) r8
+    |
+        \clef "bass" bes,,8 \mp \espressivo ( f'4 ) r8
+    |
+        \tempo "allargando"
+        f,4 \p \espressivo
+        4 \mp \espressivo
+        4 \mf \espressivo
+        4 \f \espressivo
+    |
+        \bar "||"
+        \time 4/4
+        \tempo "a tempo"
+        c1~ \ff \>
+    |
+        c2. r4 \!
+
+    %% Allegretto 2
         %r2 \clef "tenor" c''4. \f ( g8 )
-        r2 \clef "tenor" c''4. \p ( f,8 )
+        r2 \clef "tenor" c'''4. \p ( f,8 )
     |
         %c,4. r8
         \time 2/4
@@ -125,43 +203,37 @@ maestoso-bassoon = \new Voice \relative c {
     |
         aes4.-- \< ees8--
     |
-        des4-- bes4-- \ff
+        des4-- bes4--~ \ff \>
     |
         \time 4/4
         \key ees \major
-        r2 r4 g''~ \p \<
+        bes2. g''4~ \p \<
     |
         \time 2/4
         g4. \rfz \> r8 \!
     |
         ees4. \espressivo r8
     |
-        des4-- \< bes4-- \mf
+        des4-- \< ees,4--~ \mf
     |
         \time 4/4
-        r2 r4 \clef "tenor" f''4~ \p \<
+        ees2. \clef "tenor" f''4~ \p \<
     |
         \time 2/4
         f4. \rfz \> r8 \!
     |
-        fes8 \espressivo ( ees4 ) r8 %r16 ees,,-- d!-- ees--
+        fes8 \p \espressivo ( ees4 ) f!8 ( %r16 ees,,-- d!-- ees--
     |
-        d8 \rfz ( a'4 ) r8
+        \key c \major
+        d8 \rfz a'4 ) r8
     |
-        \clef "bass" bes,,8 ( f'4 ) r8
+        \clef "bass" bes,,8 \mp \espressivo ( f'4 ) r8
     |
+        \tempo "allargando"
         f,4 \p \espressivo
         4 \mp \espressivo
         4 \mf \espressivo
         4 \f \espressivo
-    |
-        \bar "||"
-        \time 4/4
-        \key c \major
-        c1~ \ff \>
-    |
-        c2. r4 \!
-        \bar ":|."
 }
 
 
